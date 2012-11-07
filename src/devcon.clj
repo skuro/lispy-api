@@ -1,6 +1,7 @@
 (ns devcon
   (:require [clojure.java.io :as io]
-            [clj-oauth2.ring :as oauth2-ring]))
+            [clj-oauth2.ring :as oauth2-ring])
+  (:import [org.springframework.social.alfresco.api.impl AlfrescoTemplate]))
 
 (def file-name "config.properties")
 
@@ -18,3 +19,6 @@
              :get-oauth2-data oauth2-ring/get-oauth2-data-from-session
              :put-oauth2-data oauth2-ring/put-oauth2-data-in-session}
             (for [[k v] props] [(keyword k) (read-string v)])))))
+
+(defn ^AlfrescoTemplate get-api [context-provider]
+  (AlfrescoTemplate. (:access-token (context-provider))))
