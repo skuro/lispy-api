@@ -1,6 +1,6 @@
 # clojure-app
 
-FIXME
+A sample application that consumes the [Alfresco Public API](http://ecmarchitect.com/archives/2012/10/02/1710), written in Clojure. The code is a loose copy of the original Java code shown at the Alfresco DevCon 2012 in Berlin.
 
 ## Prerequisites
 
